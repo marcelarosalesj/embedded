@@ -114,7 +114,6 @@ typedef struct
 #define DAC_ERROR_LOCK  2
 
 #define DACC_CHANNEL_0 0
-#define DACC_CHANNEL_1 1
 
 /*------------------------------------------------------------------------------
  *         Exported functions
@@ -148,4 +147,4 @@ extern uint32_t Dac_SendData( DacDma *pDacd, DacCmd *pCommand);
 }
 #endif
 
-#endif /* #ifndef _DAC_DMA_ */
+#endif
