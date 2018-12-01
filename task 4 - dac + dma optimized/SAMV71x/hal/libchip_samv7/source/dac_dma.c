@@ -127,7 +127,7 @@ static uint8_t _DacConfigureDmaChannels( DacDma* pDacd )
 
 static uint8_t _Dac_configureLinkList(Dacc *pDacHw, void *pXdmad, DacCmd *pCommand)
 {
-    static LinkedListDescriporView1 dmaWriteLinkList;
+        static LinkedListDescriporView1 dmaWriteLinkList;
 	uint32_t xdmaCndc;
 	sXdmadCfg xdmadCfg;
 	uint32_t * pBuffer;
