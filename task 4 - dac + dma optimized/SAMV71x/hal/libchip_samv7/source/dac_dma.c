@@ -219,26 +219,20 @@ uint32_t Dac_SendData( DacDma *pDacd, DacCmd *pCommand)
 		result = DAC_ERROR_LOCK;
 	}
 	pDacd->semaphore--;
-
 	// Initialize the callback
 	pDacd->pCurrentCommand = pCommand;
-
 	/* Initialize DMA controller using channel 0 for RX. */
 	if (_DacConfigureDmaChannels(pDacd) )
 	{
     	printf("Dac_SendData dac_error_lock\n")  ;
 		result = DAC_ERROR_LOCK;
 	}
-
 	if (_Dac_configureLinkList(pDacHw, pDacd->pXdmad, pCommand))
 	{
     	printf("Dac_SendData dac_error_lock config\n")  ;
 		result = DAC_ERROR_LOCK;
-
 	}
-
 	SCB_CleanDCache();
-
     /* Start DMA TX */
     if (XDMAD_StartTransfer( pDacd->pXdmad, dacDmaTxChannel )) 
     {
@@ -247,5 +241,4 @@ uint32_t Dac_SendData( DacDma *pDacd, DacCmd *pCommand)
     }
 	printf("dac_ok\n")  ;
 	return result;
-
 }
